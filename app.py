@@ -7,11 +7,12 @@ import openai
 import os
 
 app = Flask(__name__)
-CORS(app)
+cors = CORS(app)
 
 openai.api_key = os.getenv('OPENAIKEY')
 
 @app.route("/process", methods=['POST'])
+@cross_origin()
 def process():
     picture_data = request.json['picture']
     picture_bytes = base64.b64decode(picture_data.split(',')[1])
