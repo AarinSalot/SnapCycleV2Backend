@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import base64
 import replicate
 import io
@@ -6,6 +7,7 @@ import openai
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 openai.api_key = os.getenv('OPENAIKEY')
 
