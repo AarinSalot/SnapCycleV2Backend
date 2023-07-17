@@ -7,7 +7,7 @@ import os
 
 app = Flask(__name__)
 
-openai.api_key = os.getenv('OPENAIKEY');
+openai.api_key = os.getenv('OPENAIKEY')
 
 @app.route("/process", methods=['POST'])
 def process():
